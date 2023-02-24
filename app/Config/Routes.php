@@ -29,10 +29,47 @@ $routes->set404Override("App\Controllers\NotFound");
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+
 $routes->get('/', 'Home::index');
-
-
 $routes->get("login", "Auth::login");
+$routes->get("dashboard", "Dashboard");
+
+$routes->group('profile', static function ($router) {
+    $router->get('/', 'Profile::index');
+    $router->get('tambah', 'Profile::tambah');
+    $router->get('edit/(:num)', 'Profile::edit/$1');
+    $router->get('delete/(:num)', 'Profile::delete/$1');
+    $router->get('password/(:num)', 'Profile::password/$1');
+
+    $router->post("/", "Profile::add");
+    $router->post("(:num)", "Profile::update/$1");
+    $router->post('password/(:num)', 'Profile::gantiPassword/$1');
+});
+
+
+$routes->group('user', static function ($router) {
+    $router->get('/', 'User::index');
+    $router->get('tambah', 'User::tambah');
+    $router->get('edit/(:num)', 'User::edit/$1');
+    $router->get('delete/(:num)', 'User::delete/$1');
+    $router->get('password/(:num)', 'User::password/$1');
+
+    $router->post("/", "Profile::add");
+    $router->post("(:num)", "Profile::update/$1");
+    $router->post('password/(:num)', 'Profile::gantiPassword/$1');
+});
+
+
+$routes->group('kriteria', static function ($router) {
+    $router->get('/', 'Kriteria::index');
+    $router->get('table', 'Kriteria::table');
+    $router->get('tambah', 'Kriteria::tambah');
+    $router->get('edit/(:num)', 'Kriteria::edit/$1');
+    $router->get('delete/(:num)', 'Kriteria::delete/$1');
+});
+
+
+
 
 /*
  * --------------------------------------------------------------------
