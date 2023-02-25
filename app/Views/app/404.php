@@ -19,7 +19,7 @@
             </main>
         </div>
     </div>
-    <?= $this->include("/temp/sbscript"); ?>
+    <?= $this->include("/temp/layout/sbscript"); ?>
 </body>
 
 </html>

@@ -49,6 +49,7 @@ $routes->group('profile', static function ($router) {
 
 $routes->group('user', static function ($router) {
     $router->get('/', 'User::index');
+
     $router->get('tambah', 'User::tambah');
     $router->get('edit/(:num)', 'User::edit/$1');
     $router->get('delete/(:num)', 'User::delete/$1');
@@ -66,8 +67,23 @@ $routes->group('kriteria', static function ($router) {
     $router->get('tambah', 'Kriteria::tambah');
     $router->get('edit/(:num)', 'Kriteria::edit/$1');
     $router->get('delete/(:num)', 'Kriteria::delete/$1');
+
+    $router->post('item/getItems', 'Kriteria::getItems');
+    $router->post("item/createItem", "Kriteria::createItem");
 });
 
+
+// coba
+
+
+$routes->group('coba', ['namespace' => 'App\Controllers'], function ($routes) {
+    $routes->get('/', 'Coba::index');
+    $routes->post('/', 'Coba::store');
+    $routes->get('create', 'Coba::create');
+    $routes->get('edit/(:num)', 'Coba::edit/$1');
+    $routes->put('update/(:num)', 'Coba::update/$1');
+    $routes->delete('delete/(:num)', 'Coba::delete/$1');
+});
 
 
 

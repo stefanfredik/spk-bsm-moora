@@ -6,7 +6,7 @@ use CodeIgniter\Database\Migration;
 
 class Kriteria extends Migration {
     public function up() {
-        $data = [php
+        $data = [
             'id' => [
                 'type'  => 'INT',
                 'auto_increment'    => TRUE

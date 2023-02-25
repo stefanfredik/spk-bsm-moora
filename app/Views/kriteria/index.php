@@ -13,6 +13,7 @@
                             <th>Kriteria</th>
                             <th>Simbol</th>
                             <th>Nilai</th>
+                            <!-- <th>Action</th> -->
                         </tr>
                     </thead>
                 </table>
@@ -33,17 +34,25 @@
             <div class="modal-body">
                 <form>
                     <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" class="form-control" id="name" name="name">
+                        <label for="kriteria">Kriterias</label>
+                        <input type="text" class="form-control" id="kriteria" name="kriteria">
                     </div>
+
                     <div class="form-group">
-                        <label for="description">Description</label>
-                        <textarea class="form-control" id="description" name="description"></textarea>
+                        <label for="nilai">Nilai</label>
+                        <textarea class="form-control" id="nilai" name="nilai"></textarea>
                     </div>
+
                     <div class="form-group">
-                        <label for="price">Price</label>
-                        <input type="number" class="form-control" id="price" name="price">
+                        <label for="keterangan">Keterangan</label>
+                        <input type="text" class="form-control" id="keterangan" name="keterangan">
                     </div>
+
+                    <div class="form-group">
+                        <label for="type">Type</label>
+                        <input type="text" class="form-control" id="type" name="type">
+                    </div>
+
                 </form>
             </div>
             <div class="modal-footer">

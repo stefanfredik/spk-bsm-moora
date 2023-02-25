@@ -9,7 +9,7 @@
             'serverSide': true,
             'order': [],
             'ajax': {
-                'url': '<?php echo base_url('item/getItems'); ?>',
+                'url': '/kriteria/item/getItems',
                 'type': 'POST'
             },
             'columnDefs': [{
@@ -25,7 +25,7 @@
 
     function createItem() {
         $.ajax({
-            url: '<?php echo base_url('item/createItem'); ?>',
+            url: '<?php echo base_url('/kriteria/item/createItem'); ?>',
             type: 'POST',
             dataType: 'json',
             data: {
