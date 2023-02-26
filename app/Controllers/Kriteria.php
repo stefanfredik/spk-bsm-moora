@@ -29,41 +29,36 @@ class Kriteria extends BaseController {
         return view("kriteria/index", $data);
     }
 
-    public function getItems() {
-        $items = $this->kriteriaModel->findAll();
-
-        return $this->respond(['data' => $items]);
-    }
-
-    public function getItemById() {
-        $id = $this->request->getVar('id');
-        $item = $this->kriteriaModel->find($id);
-        return $this->respond(['data' => $item]);
-    }
-
-    public function createItem() {
-        $data = $this->request->getPost();
-        $this->kriteriaModel->save($data);
-
-        return $this->respond(['success' => true]);
-    }
-
-    public function updateItem() {
-        $id = $this->request->getVar('id');
+    public function table() {
         $data = [
-            'name' => $this->request->getVar('name'),
-            'description' => $this->request->getVar('description'),
-            'price' => $this->request->getVar('price')
+            'title' => 'Data Kriteria',
+            'kriteria' => $this->kriteriaModel->orderBy('keterangan', 'ASC')->findAll(),
+            'meta' => $this->meta,
         ];
 
-        $this->kriteriaModel->updateItem($id, $data);
-
-        return $this->respond(['success' => true]);
+        return view('/kriteria/table', $data);
     }
 
-    public function deleteItem() {
-        $id = $this->request->getVar('id');
-        $this->kriteriaModel->deleteItem($id);
-        return $this->respond(['success' => true]);
+    public function tambah() {
+        $data = [
+            'title' => 'Tambah Data Kriteria',
+            'url'   => $this->meta['urla']
+        ];
+
+        return view('/kriteria/tambah', $data);
+    }
+
+    public function delete($id) {
+        $this->kriteriaModel->delete($id);
+
+        // $column = "k_" . $id;
+        // $this->forge->dropColumn('peserta', $column);
+
+        $res = [
+            'status'    => 'success',
+            'msg'     => 'Data berhasil dihapus.',
+        ];
+
+        return $this->respond($res, 200);
     }
 }

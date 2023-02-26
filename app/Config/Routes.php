@@ -47,20 +47,6 @@ $routes->group('profile', static function ($router) {
 });
 
 
-$routes->group('user', static function ($router) {
-    $router->get('/', 'User::index');
-
-    $router->get('tambah', 'User::tambah');
-    $router->get('edit/(:num)', 'User::edit/$1');
-    $router->get('delete/(:num)', 'User::delete/$1');
-    $router->get('password/(:num)', 'User::password/$1');
-
-    $router->post("/", "Profile::add");
-    $router->post("(:num)", "Profile::update/$1");
-    $router->post('password/(:num)', 'Profile::gantiPassword/$1');
-});
-
-
 $routes->group('kriteria', static function ($router) {
     $router->get('/', 'Kriteria::index');
     $router->get('table', 'Kriteria::table');
@@ -76,15 +62,23 @@ $routes->group('kriteria', static function ($router) {
 // coba
 
 
-$routes->group('coba', ['namespace' => 'App\Controllers'], function ($routes) {
-    $routes->get('/', 'Coba::index');
-    $routes->post('/', 'Coba::store');
-    $routes->get('create', 'Coba::create');
-    $routes->get('edit/(:num)', 'Coba::edit/$1');
-    $routes->put('update/(:num)', 'Coba::update/$1');
-    $routes->delete('delete/(:num)', 'Coba::delete/$1');
-});
+$routes->group('mahasiswa', ['namespace' => 'App\Controllers'], function ($routes) {
 
+    // Route ke halaman mahasiswa
+    $routes->get('/', 'Mahasiswa::index');
+
+    // Route untuk AJAX list data mahasiswa
+    $routes->get('getData', 'Mahasiswa::getData');
+
+    // Route untuk tambah data mahasiswa
+    $routes->post('/tambah', 'Mahasiswa::tambah');
+
+    // Route untuk edit data mahasiswa
+    $routes->post('/edit', 'Mahasiswa::edit');
+
+    // Route untuk hapus data mahasiswa
+    $routes->get('/hapus/(:num)', 'Mahasiswa::hapus/$1');
+});
 
 
 /*
