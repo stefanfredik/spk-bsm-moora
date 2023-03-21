@@ -34,6 +34,8 @@ $routes->get('/', 'Home::index');
 $routes->get("login", "Auth::login");
 $routes->get("dashboard", "Dashboard");
 
+$routes->get("user", "User::index");
+
 $routes->group('profile', static function ($router) {
     $router->get('/', 'Profile::index');
     $router->get('tambah', 'Profile::tambah');
@@ -51,34 +53,32 @@ $routes->group('kriteria', static function ($router) {
     $router->get('/', 'Kriteria::index');
     $router->get('table', 'Kriteria::table');
     $router->get('tambah', 'Kriteria::tambah');
-    $router->get('edit/(:num)', 'Kriteria::edit/$1');
+    $router->get('(:num)', 'Kriteria::edit/$1');
     $router->get('delete/(:num)', 'Kriteria::delete/$1');
 
-    $router->post('item/getItems', 'Kriteria::getItems');
-    $router->post("item/createItem", "Kriteria::createItem");
+    $router->post('/', 'Kriteria::store');
+    $router->post("(:num)", "Kriteria::update/$1");
+
+    $router->delete("(:num)", "Kriteria::delete/$1");
+});
+
+
+$routes->group('subkriteria', static function ($router) {
+    $router->get('/', 'Subkriteria::index');
+    $router->get('table', 'Subkriteria::table');
+    $router->get('tambah', 'Subkriteria::tambah');
+    $router->get('(:num)', 'Subkriteria::edit/$1');
+    $router->get('delete/(:num)', 'Subkriteria::delete/$1');
+
+    $router->post('/', 'Subkriteria::store');
+    $router->post("(:num)", "Subkriteria::update/$1");
+
+    $router->delete("(:num)", "Subkriteria::delete/$1");
 });
 
 
 // coba
 
-
-$routes->group('mahasiswa', ['namespace' => 'App\Controllers'], function ($routes) {
-
-    // Route ke halaman mahasiswa
-    $routes->get('/', 'Mahasiswa::index');
-
-    // Route untuk AJAX list data mahasiswa
-    $routes->get('getData', 'Mahasiswa::getData');
-
-    // Route untuk tambah data mahasiswa
-    $routes->post('/tambah', 'Mahasiswa::tambah');
-
-    // Route untuk edit data mahasiswa
-    $routes->post('/edit', 'Mahasiswa::edit');
-
-    // Route untuk hapus data mahasiswa
-    $routes->get('/hapus/(:num)', 'Mahasiswa::hapus/$1');
-});
 
 
 /*

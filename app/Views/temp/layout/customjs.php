@@ -1,5 +1,5 @@
 <script>
-    const isDebug = false;
+    const isDebug = true;
 
     function debug(a) {
         if (isDebug) {
@@ -52,7 +52,7 @@
         })
     }
 
-    async function saveEdit(event) {
+    async function update(event) {
         event.preventDefault();
         let form = document.querySelector("form");
         const id = form.getAttribute("data-id");
@@ -60,7 +60,7 @@
         const data = new FormData(form);
         const modal = $("#modal");
 
-        axios.post(`/${url}/saveedit/${id}`, data).then(res => {
+        axios.post(`/${url}/${id}`, data).then(res => {
             debug(res);
             if (res.data.status == "success") {
                 Toast.fire({
@@ -127,13 +127,14 @@
             confirmButtonText: "Hapus"
         }).then(async result => {
             if (result.isConfirmed) {
-                axios.delete(`/${url}/delete/${id}`).then(res => {
+                axios.delete(`/${url}/${id}`).then(res => {
                     console.log(res);
                     if (res.data.status == "success") {
                         Toast.fire({
                             icon: res.data.status,
                             title: res.data.msg
                         });
+
                         getTable(url)
                     }
                 }).catch(e => {
@@ -151,7 +152,7 @@
         // target.preventDefault();
         const id = target.getAttribute("data-id");
         $("#modal").modal("hide");
-        $.get(`/${url}/edit/${id}`, (data, status) => {
+        $.get(`/${url}/${id}`, (data, status) => {
             if (status === "success") {
                 $("#modalArea").html(data);
                 $("#modal").modal("show")
@@ -184,7 +185,7 @@
 <script>
     const Toast = Swal.mixin({
         position: 'center',
-        timer: 1000,
+        timer: 1200,
         showConfirmButton: false,
     })
 

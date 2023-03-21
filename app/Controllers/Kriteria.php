@@ -32,8 +32,8 @@ class Kriteria extends BaseController {
     public function table() {
         $data = [
             'title' => 'Data Kriteria',
-            'kriteria' => $this->kriteriaModel->orderBy('keterangan', 'ASC')->findAll(),
-            'meta' => $this->meta,
+            'url'   => $this->meta['url'],
+            'dataKriteria' => $this->kriteriaModel->orderBy('keterangan', 'ASC')->findAll(),
         ];
 
         return view('/kriteria/table', $data);
@@ -42,17 +42,67 @@ class Kriteria extends BaseController {
     public function tambah() {
         $data = [
             'title' => 'Tambah Data Kriteria',
-            'url'   => $this->meta['urla']
+            'url'   => $this->meta['url']
         ];
 
         return view('/kriteria/tambah', $data);
     }
 
+    public function edit($id) {
+        $data = [
+            'title' => 'Edit Data Kriteria',
+            'kriteria'  => $this->kriteriaModel->find($id),
+            'meta'      => $this->meta
+        ];
+
+        return view('/kriteria/edit', $data);
+    }
+
+
+    public function store() {
+        $data = $this->request->getPost();
+        $this->kriteriaModel->save($data);
+
+        // $result = $this->kriteriaModel->orderBy('id', 'desc')->first();
+        // $column = 'k_' . $result['id'];
+
+        // $field = [
+        //     $column => [
+        //         'type' => 'INT'
+        //     ]
+        // ];
+
+        // $this->forge->addColumn('datasiswa', $field);
+
+        $res = [
+            'status' => 'success',
+            'msg'   => 'Data Kriteria Berhasil Ditambahkan.',
+            'data'  => $data
+        ];
+
+        return $this->respond($res, 200);
+    }
+
+    public function update($id) {
+        $data = $this->request->getPost();
+        $this->kriteriaModel->update($id, $data);
+
+        $res = [
+            'status' => 'success',
+            'msg'   => 'Data berhasil Diupdate.',
+            'data'  => $data
+        ];
+
+        return $this->respond($res, 200);
+    }
+
+
+
     public function delete($id) {
         $this->kriteriaModel->delete($id);
 
         // $column = "k_" . $id;
-        // $this->forge->dropColumn('peserta', $column);
+        // $this->forge->dropColumn('datablt', $column);
 
         $res = [
             'status'    => 'success',
