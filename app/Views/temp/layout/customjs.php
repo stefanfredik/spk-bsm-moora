@@ -1,5 +1,5 @@
 <script>
-    const isDebug = true;
+    const isDebug = false;
 
     function debug(a) {
         if (isDebug) {
@@ -128,7 +128,8 @@
         }).then(async result => {
             if (result.isConfirmed) {
                 axios.delete(`/${url}/${id}`).then(res => {
-                    console.log(res);
+                    debug(res);
+
                     if (res.data.status == "success") {
                         Toast.fire({
                             icon: res.data.status,
@@ -138,7 +139,8 @@
                         getTable(url)
                     }
                 }).catch(e => {
-                    console.log(e);
+                    debug(e);
+
                     Toast.fire({
                         icon: "error",
                         title: "Gagal menghapus data!"

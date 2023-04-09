@@ -1,6 +1,7 @@
 <?= $this->extend('temp/index'); ?>
 <?= $this->section('content'); ?>
 <div class="px-4 mt-n10">
+
     <div class="card card-icon mb-4">
         <div class="row g-0">
             <div class="col-auto card-icon-aside bg-primary"><i class="me-1 text-white-50" data-feather="users"></i></div>
@@ -13,54 +14,52 @@
         </div>
     </div>
 
+    <button data-url="<?= '/' . $meta['url'] . '/tambah'; ?>" class="m-2 btn btn-outline-primary" onclick="add(this)"><i class="bi bi-plus-circle mx-1"></i>Tambah Data</button>
     <div class="card mb-4">
         <div class="card-header">Table User</div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table" id="table">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
-                            <th>Status</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
+        <div id="data" class="card-body">
 
-                    <tbody>
-                        <tr>
-                            <td><i class="me-1 text-primary rounded" data-feather="user"></td>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
-                            <td>$320,800</td>
-                            <td>
-                                <div class="badge bg-primary text-white rounded-pill">Full-time</div>
-                            </td>
-                            <td>
-                                <button class="btn btn-datatable btn-icon btn-transparent-dark me-2"><i data-feather="more-vertical"></i></button>
-                                <button class="btn btn-datatable btn-icon btn-transparent-dark"><i data-feather="trash-2"></i></button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
         </div>
     </div>
 </div>
+
+
+<div id="modalArea">
+</div>
 <?= $this->endSection(); ?>
-<!-- script -->
+
 <?= $this->section('script'); ?>
 <script>
-    $(document).ready(function() {
-        $('#table').DataTable();
+    let url = '<?= $meta['url'] ?>';
+
+    $(document).ready(() => {
+        getTable(url);
     });
+</script>
+
+<script>
+    const formInput = ["username", "password", "password2"];
+
+
+    function validation(error) {
+        resetForm(formInput);
+        if (error.username) {
+            $("input[name='username']").addClass("is-invalid").next().html(error.username);
+        }
+
+        if (error.password) {
+            $("input[name='password']").addClass("is-invalid").next().html(error.password);
+        }
+
+        if (error.password2) {
+            $("input[name='password2']").addClass("is-invalid").next().html(error.password2);
+        }
+    }
+
+    function resetForm(arr) {
+        arr.forEach((a) => {
+            $(`input[name='${a}']`).removeClass("is-invalid").next().html("");
+        });
+    }
 </script>
 <?= $this->endSection(); ?>

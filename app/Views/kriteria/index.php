@@ -18,6 +18,7 @@
 <div id="modalArea">
 </div>
 
+<?= $this->endSection(); ?>
 
 <?= $this->section('script'); ?>
 <script>
@@ -27,7 +28,4 @@
         getTable(url);
     });
 </script>
-<?= $this->endSection(); ?>
-
-
 <?= $this->endSection(); ?>
