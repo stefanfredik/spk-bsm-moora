@@ -1,3 +1,24 @@
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    const Toast = Swal.mixin({
+        position: 'center',
+        timer: 1000,
+        showConfirmButton: false,
+    })
+
+    const Confirm = Swal.mixin({
+        title: 'Hapus Data',
+        text: "Apakah anda yakin untuk menghapus?",
+        icon: 'warning',
+        showCancelButton: true,
+        cancelButtonText: 'Batal',
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Hapus'
+    });
+</script>
+
 <script>
     const isDebug = false;
 
@@ -37,6 +58,7 @@
                     icon: res.data.status,
                     title: res.data.msg
                 });
+
                 modal.modal("hide");
                 getTable(url)
             }
@@ -182,23 +204,4 @@
             })
         });
     }
-</script>
-
-<script>
-    const Toast = Swal.mixin({
-        position: 'center',
-        timer: 1200,
-        showConfirmButton: false,
-    })
-
-    const Confirm = Swal.mixin({
-        title: 'Hapus Data',
-        text: "Apakah anda yakin untuk menghapus?",
-        icon: 'warning',
-        showCancelButton: true,
-        cancelButtonText: 'Batal',
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Hapus'
-    });
 </script>

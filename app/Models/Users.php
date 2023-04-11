@@ -15,7 +15,7 @@ class Users extends AuthUserModel {
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields  = [
-        'nama_user', 'email', 'username', 'last_login', 'password_hash', 'reset_hash', 'reset_at', 'reset_expires', 'activate_hash',
+        'id', 'nama_user', 'email', 'username', 'last_login', 'password_hash', 'reset_hash', 'reset_at', 'reset_expires', 'activate_hash',
         'status', 'status_message', 'active', 'force_pass_reset', 'permissions', 'deleted_at',
     ];
     // Dates

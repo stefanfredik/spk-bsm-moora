@@ -58,6 +58,11 @@
                 Data Perhitungan
             </a>
 
+            <a class="nav-link" href="/keputusan">
+                <div class="nav-link-icon"><i data-feather="percent"></i></div>
+                Data Keputusan
+            </a>
+
             <div class="sidenav-menu-heading">Laporan</div>
             <a class="nav-link" href="/laporan">
                 <div class="nav-link-icon"><i data-feather="hard-drive"></i></div>

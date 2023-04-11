@@ -137,6 +137,12 @@ $routes->group('user', static function ($router) {
 });
 
 
+
+
+$routes->get("perhitungan", 'Perhitungan::index');
+$routes->get("keputusan", 'Keputusan::index');
+$routes->get("laporan", 'Laporan::index');
+
 // coba
 
 
