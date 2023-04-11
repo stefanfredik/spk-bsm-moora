@@ -18,6 +18,7 @@ class Kriteria extends BaseController {
 
     public function __construct() {
         $this->kriteriaModel = new KriteriaModel();
+        $this->forge = \Config\Database::forge();
     }
 
     public function index() {
@@ -63,16 +64,16 @@ class Kriteria extends BaseController {
         $data = $this->request->getPost();
         $this->kriteriaModel->save($data);
 
-        // $result = $this->kriteriaModel->orderBy('id', 'desc')->first();
-        // $column = 'k_' . $result['id'];
+        $result = $this->kriteriaModel->orderBy('id', 'desc')->first();
+        $column = 'k_' . $result['id'];
 
-        // $field = [
-        //     $column => [
-        //         'type' => 'INT'
-        //     ]
-        // ];
+        $field = [
+            $column => [
+                'type' => 'INT'
+            ]
+        ];
 
-        // $this->forge->addColumn('datasiswa', $field);
+        $this->forge->addColumn('peserta', $field);
 
         $res = [
             'status' => 'success',
@@ -101,8 +102,8 @@ class Kriteria extends BaseController {
     public function delete($id) {
         $this->kriteriaModel->delete($id);
 
-        // $column = "k_" . $id;
-        // $this->forge->dropColumn('datablt', $column);
+        $column = "k_" . $id;
+        $this->forge->dropColumn('peserta', $column);
 
         $res = [
             'status'    => 'success',

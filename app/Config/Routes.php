@@ -77,6 +77,37 @@ $routes->group('subkriteria', static function ($router) {
 });
 
 
+
+$routes->group('datasiswa', static function ($router) {
+    $router->get('/', 'Datasiswa::index');
+    $router->get('table', 'Datasiswa::table');
+    $router->get('tambah', 'Datasiswa::tambah');
+    $router->get('(:num)', 'Datasiswa::edit/$1');
+    $router->get('detail/(:num)', 'Datasiswa::detail/$1');
+    $router->get('delete/(:num)', 'Datasiswa::delete/$1');
+
+    $router->post('/', 'Datasiswa::store');
+    $router->post("(:num)", "Datasiswa::update/$1");
+
+    $router->delete("(:num)", "Datasiswa::delete/$1");
+});
+
+
+$routes->group('datapeserta', static function ($router) {
+    $router->get('/', 'Peserta::index');
+    $router->get('table', 'Peserta::table');
+    $router->get('tambah', 'Peserta::tambah');
+    $router->get('(:num)', 'Peserta::edit/$1');
+    $router->get('detail/(:num)', 'Peserta::detail/$1');
+    $router->get('delete/(:num)', 'Peserta::delete/$1');
+
+    $router->post('/', 'Peserta::store');
+    $router->post("(:num)", "Peserta::update/$1");
+
+    $router->delete("(:num)", "Peserta::delete/$1");
+});
+
+
 // $routes->group("user", ['filter' => 'role:Admin'], function ($r) {
 //     $r->get("/", "User::getIndex");
 //     $r->get("tambah", "User::getTambah");

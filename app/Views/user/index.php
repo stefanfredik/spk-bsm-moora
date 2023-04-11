@@ -8,7 +8,7 @@
             <div class="col">
                 <div class="card-body py-5">
                     <h5 class="card-title"><?= $title; ?></h5>
-                    <p class="card-text">Jumlah User : </p>
+                    <p class="card-text">Jumlah User : <?= $userCount; ?></p>
                 </div>
             </div>
         </div>

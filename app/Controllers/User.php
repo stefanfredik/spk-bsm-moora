@@ -27,6 +27,7 @@ class User extends BaseController {
         $data = [
             'meta' => $this->meta,
             'title' => 'Data User',
+            'userCount' => $this->userModel->countAll()
         ];
 
         return view("user/index", $data);

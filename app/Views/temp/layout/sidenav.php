@@ -29,6 +29,14 @@
                 <div class="nav-link-icon"><i data-feather="users"></i></div>
                 Data User
             </a>
+
+
+            <a class="nav-link" href="/datasiswa">
+                <div class="nav-link-icon"><i data-feather="layers"></i></div>
+                Data Siswa
+            </a>
+            <hr class="hr">
+
             <a class="nav-link" href="/kriteria">
                 <div class="nav-link-icon"><i data-feather="layers"></i></div>
                 Data Kriteria
@@ -39,9 +47,9 @@
                 Data Sub Kriteria
             </a>
 
-            <a class="nav-link" href="/siswa">
+            <a class="nav-link" href="/datapeserta">
                 <div class="nav-link-icon"><i data-feather="file-text"></i></div>
-                Data Siswa
+                Data Peserta
             </a>
 
             <div class="sidenav-menu-heading">Pengelolahan</div>
