@@ -137,6 +137,11 @@ $routes->group('user', static function ($router) {
 });
 
 
+$routes->group('profile', static function ($router) {
+    $router->get("/", 'Profile::index');
+    $router->get("password", 'Profile::gantipassword');
+});
+
 
 
 $routes->get("perhitungan", 'Perhitungan::index');
