@@ -95,7 +95,7 @@ define('EVENT_PRIORITY_HIGH', 10);
 
 // $config  = config("Config");
 const APP_NAME  = "SPK";
-const APP_DESC   = "Sistem Pengambilan Kep";
+const APP_DESC   = "SPK BSM SDI Golo Bombong";
 const APP_VER   = "1.0.0";
 const LOGO_IMG = "assets/img/favicon.png";
-const APP_SLUG = "SPK APP";
+const APP_SLUG = "SPK Golo Bombong";

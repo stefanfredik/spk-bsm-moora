@@ -9,21 +9,24 @@ use App\Models\KriteriaModel;
 use App\Models\PesertaModel;
 use App\Models\SubkriteriaModel;
 
-class Laporan extends BaseController {
+class Laporan extends BaseController
+{
     var $meta = [
         'url' => 'laporan',
         'title' => 'Laporan',
         'subtitle' => 'Halaman Laporan'
     ];
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->pesertaModel = new PesertaModel();
         $this->kriteriaModel = new KriteriaModel();
         $this->subkriteriaModel = new SubkriteriaModel();
         $this->kelayakanModel = new KelayakanModel();
     }
 
-    public function index() {
+    public function index()
+    {
         $data = [
             'title' => $this->meta['title'],
             'dataPeserta' => $this->getPeserta(),
@@ -32,11 +35,14 @@ class Laporan extends BaseController {
             'url'   => $this->meta['url'],
         ];
 
+        // dd($this->getPeserta());
+
         // dd($data);
         return view('/laporan/index', $data);
     }
 
-    public function getCetak($bantuan) {
+    public function getCetak($bantuan)
+    {
         if ($bantuan == 'blt') {
             return $this->cetakBlt();
         } else if ($bantuan == 'penduduk') {
@@ -48,7 +54,8 @@ class Laporan extends BaseController {
 
 
 
-    private function cetakPenduduk() {
+    private function cetakPenduduk()
+    {
         $data = [
             'title' => 'Laporan',
             'dataPeserta' => $this->getPeserta(),
@@ -69,7 +76,8 @@ class Laporan extends BaseController {
 
 
 
-    private function getPeserta(): array {
+    private function getPeserta()
+    {
         $kriteria       = $this->kriteriaModel->findAll();
         $subkriteria    = $this->subkriteriaModel->findAll();
         $peserta        = $this->pesertaModel->findAllPeserta();
