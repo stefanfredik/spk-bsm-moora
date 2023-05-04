@@ -168,7 +168,7 @@ class Moora
 
         // Nilai ke array
         foreach ($this->peserta as $i => $ps) {
-            $this->peserta[$i]['kriteria_nilai'] = ($ps['kriteria_max'] + $ps['kriteria_min']);
+            $this->peserta[$i]['kriteria_nilai'] = ($ps['kriteria_max'] - $ps['kriteria_min']);
         }
     }
 
@@ -199,8 +199,8 @@ class Moora
             return 0;
         }
         $total = array_sum($allNk);
-        // return number_format(($nk / $total), 2);
-        return ($nk / $total);
+        return number_format(($nk / $total), 3);
+        // return ($nk / $total);
     }
 
     #bobot              = bobot peserta dalam sebuah kriteria
@@ -219,13 +219,13 @@ class Moora
         }
 
 
-        // return number_format($bobot / sqrt($nilai), 4);
-        return ($bobot / sqrt($nilai));
+        return number_format($bobot / sqrt($nilai), 4);
+        // return ($bobot / sqrt($nilai));
     }
 
     private function optimasi($nilai, $bobot): float
     {
-        // return number_format($nilai * $bobot, 4);
-        return ($nilai * $bobot);
+        return number_format($nilai * $bobot, 3);
+        // return ($nilai * $bobot);
     }
 }
