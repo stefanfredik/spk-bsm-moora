@@ -31,7 +31,7 @@ $routes->set404Override("App\Controllers\NotFound");
 // route since we don't have to scan directories.
 
 $routes->get('/', 'Dashboard::index');
-// $routes->get("login", "Auth::login");
+$routes->get("login", "Auth::login");
 $routes->get("dashboard", "Dashboard");
 
 $routes->get("user", "User::index");
@@ -83,11 +83,14 @@ $routes->group('datasiswa', static function ($router) {
     $router->get('table', 'Datasiswa::table');
     $router->get('tambah', 'Datasiswa::tambah');
     $router->get('(:num)', 'Datasiswa::edit/$1');
+    $router->get('upload', 'Datasiswa::upload');
     $router->get('detail/(:num)', 'Datasiswa::detail/$1');
     $router->get('delete/(:num)', 'Datasiswa::delete/$1');
 
+
     $router->post('/', 'Datasiswa::store');
     $router->post("(:num)", "Datasiswa::update/$1");
+    $router->post('upload', 'Datasiswa::doupload');
 
     $router->delete("(:num)", "Datasiswa::delete/$1");
 });

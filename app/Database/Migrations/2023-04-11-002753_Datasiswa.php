@@ -4,15 +4,14 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Datasiswa extends Migration {
-    public function up() {
+class Datasiswa extends Migration
+{
+    public function up()
+    {
         $data = [
             'id' => [
                 'type'  => 'INT',
                 'auto_increment' => true
-            ],
-            'id_user' => [
-                'type'  => 'INT',
             ],
             'nisn' => [
                 'type' => 'VARCHAR',
@@ -24,35 +23,46 @@ class Datasiswa extends Migration {
             ],
             'tempat_lahir' => [
                 'type' => 'VARCHAR',
-                'constraint' => 64
+                'constraint' => 64,
+                'null' => true
             ],
             'tanggal_lahir' => [
                 'type' => 'DATE'
             ],
             'jenis_kelamin' => [
                 'type' => 'VARCHAR',
-                'constraint' => 64
+                'constraint' => 64,
+                'null' => true
             ],
             'kelas' => [
                 'type' => 'VARCHAR',
-                'constraint' => 64
+                'constraint' => 64,
+                'null' => true
             ],
             'nama_orangtua' => [
                 'type' => 'VARCHAR',
-                'constraint' => 64
+                'constraint' => 64,
+                'null' => true
             ],
             'jumlah_tanggungan' => [
                 'type' => 'VARCHAR',
-                'constraint' => 64
-            ],
-
-            'telepon' => [
-                'type' => 'VARCHAR',
-                'constraint' => 64
+                'constraint' => 64,
+                'null' => true
             ],
             'alamat' => [
                 'type' => 'VARCHAR',
-                'constraint' => 128
+                'constraint' => 128,
+                'null' => true
+            ],
+            'no_rekening' => [
+                'type' => 'VARCHAR',
+                'constraint' => 128,
+                'null' => true
+            ],
+            'nama_rekening' => [
+                'type' => 'VARCHAR',
+                'constraint' => 128,
+                'null' => true
             ]
         ];
 
@@ -61,7 +71,8 @@ class Datasiswa extends Migration {
         $this->forge->createTable('siswa');
     }
 
-    public function down() {
+    public function down()
+    {
         $this->forge->dropTable('siswa');
     }
 }

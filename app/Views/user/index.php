@@ -14,7 +14,7 @@
         </div>
     </div>
 
-    <button data-url="<?= '/' . $meta['url'] . '/tambah'; ?>" class="m-2 btn btn-outline-primary" onclick="add(this)"><i class="bi bi-plus-circle mx-1"></i>Tambah Data</button>
+    <button data-url="<?= '/' . $meta['url'] . '/tambah'; ?>" class="my-2 btn btn-primary" onclick="add(this)"><i class="bi bi-plus-circle mx-1"></i>Tambah Data</button>
     <div class="card mb-4">
         <div class="card-header">Table User</div>
         <div id="data" class="card-body">

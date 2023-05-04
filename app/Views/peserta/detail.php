@@ -63,9 +63,26 @@
                         </div>
                     </div>
 
+                    <div class="row mb-2">
+                        <div class="col-md-4">
+                            <label class="form-label">No. Rekening</label>
+                        </div>
+                        <div class="col-md-8">
+                            <p><?= $peserta['nomor_rekening']; ?></p>
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-2">
+                        <div class="col-md-4">
+                            <label class="form-label">Nama Rekening</label>
+                        </div>
+                        <div class="col-md-8">
+                            <p><?= $peserta['nama_rekening']; ?></p>
+                        </div>
+                    </div>
 
                     <hr>
-
 
                     <div class="row mb-2">
                         <div class="col-md-4">
@@ -84,7 +101,6 @@
                             <p><?= $peserta['jumlah_tanggungan']; ?></p>
                         </div>
                     </div>
-
 
                     <div class="row mb-2">
                         <div class="col-md-4">

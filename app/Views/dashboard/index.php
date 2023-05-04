@@ -2,9 +2,9 @@
 <?= $this->section("content"); ?>
 
 <div class="row text-center mb-5">
-    <div>
-        <h2 class="text-white">Halo Admin</h2>
-        <h4 class="text-white">Selamat datang di <?= APP_DESC; ?></h4>
+    <div class="bg-white text-black m-3 p-3 rounded">
+        <h2 class="">Halo Admin</h2>
+        <h4 class="fw-bold">Selamat datang di <?= APP_DESC; ?></h4>
         <img width="100" class="img-fluid" src="/assets/img/logo.png" alt="">
     </div>
 </div>
