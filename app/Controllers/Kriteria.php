@@ -6,7 +6,8 @@ use App\Controllers\BaseController;
 use App\Models\KriteriaModel;
 use CodeIgniter\API\ResponseTrait;
 
-class Kriteria extends BaseController {
+class Kriteria extends BaseController
+{
     use ResponseTrait;
 
     var $meta = [
@@ -16,12 +17,14 @@ class Kriteria extends BaseController {
     ];
 
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->kriteriaModel = new KriteriaModel();
         $this->forge = \Config\Database::forge();
     }
 
-    public function index() {
+    public function index()
+    {
         $data = [
             'meta' => $this->meta,
             'title' => 'Data Kriteria'
@@ -30,7 +33,8 @@ class Kriteria extends BaseController {
         return view("kriteria/index", $data);
     }
 
-    public function table() {
+    public function table()
+    {
         $data = [
             'title' => 'Data Kriteria',
             'url'   => $this->meta['url'],
@@ -40,7 +44,8 @@ class Kriteria extends BaseController {
         return view('/kriteria/table', $data);
     }
 
-    public function tambah() {
+    public function tambah()
+    {
         $data = [
             'title' => 'Tambah Data Kriteria',
             'url'   => $this->meta['url']
@@ -49,7 +54,8 @@ class Kriteria extends BaseController {
         return view('/kriteria/tambah', $data);
     }
 
-    public function edit($id) {
+    public function edit($id)
+    {
         $data = [
             'title' => 'Edit Data Kriteria',
             'kriteria'  => $this->kriteriaModel->find($id),
@@ -60,7 +66,8 @@ class Kriteria extends BaseController {
     }
 
 
-    public function store() {
+    public function store()
+    {
         $data = $this->request->getPost();
         $this->kriteriaModel->save($data);
 
@@ -84,7 +91,8 @@ class Kriteria extends BaseController {
         return $this->respond($res, 200);
     }
 
-    public function update($id) {
+    public function update($id)
+    {
         $data = $this->request->getPost();
         $this->kriteriaModel->update($id, $data);
 
@@ -99,7 +107,8 @@ class Kriteria extends BaseController {
 
 
 
-    public function delete($id) {
+    public function delete($id)
+    {
         $this->kriteriaModel->delete($id);
 
         $column = "k_" . $id;

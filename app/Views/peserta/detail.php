@@ -68,7 +68,7 @@
                             <label class="form-label">No. Rekening</label>
                         </div>
                         <div class="col-md-8">
-                            <p><?= $peserta['nomor_rekening']; ?></p>
+                            <p><?= $peserta['no_rekening']; ?></p>
                         </div>
                     </div>
 
