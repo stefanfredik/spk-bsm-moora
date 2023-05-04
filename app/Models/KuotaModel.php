@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use CodeIgniter\Model;
+use PhpParser\Node\Stmt\Return_;
 
 class KuotaModel extends Model
 {
@@ -15,4 +16,10 @@ class KuotaModel extends Model
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = ['id', 'tahun', 'periode', 'jumlah_kuota', 'tanggal_terima', 'keterangan'];
+
+
+    public function findAll(int $limit = 0, int $offset = 0)
+    {
+        return $this->findAll()->sort();
+    }
 }

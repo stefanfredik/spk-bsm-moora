@@ -199,7 +199,8 @@ class Moora
             return 0;
         }
         $total = array_sum($allNk);
-        return number_format(($nk / $total), 2);
+        // return number_format(($nk / $total), 2);
+        return ($nk / $total);
     }
 
     #bobot              = bobot peserta dalam sebuah kriteria
