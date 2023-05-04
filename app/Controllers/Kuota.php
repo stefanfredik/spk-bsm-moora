@@ -42,4 +42,69 @@ class Kuota extends BaseController
 
         return view('/kuota/table', $data);
     }
+
+    public function tambah()
+    {
+        $data = [
+            'title' => 'Tambah Data Kuota dan Periode',
+            'url'   => $this->meta['url']
+        ];
+
+        return view('/kuota/tambah', $data);
+    }
+
+    public function edit($id)
+    {
+        $data = [
+            'title' => 'Edit Data Kuota',
+            'kuota'  => $this->kuotaModel->find($id),
+            'meta'      => $this->meta
+        ];
+
+        return view('/kuota/edit', $data);
+    }
+
+
+    //  crud
+
+    public function store()
+    {
+        $data = $this->request->getPost();
+        $this->kuotaModel->save($data);
+
+        $res = [
+            'status' => 'success',
+            'msg'   => 'Data Kriteria Berhasil Ditambahkan.',
+            'data'  => $data
+        ];
+
+        return $this->respond($res, 200);
+    }
+
+
+    public function update($id)
+    {
+        $data = $this->request->getPost();
+        $this->kuotaModel->update($id, $data);
+
+        $res = [
+            'status' => 'success',
+            'msg'   => 'Data berhasil Diupdate.',
+            'data'  => $data
+        ];
+
+        return $this->respond($res, 200);
+    }
+
+
+    public function delete($id)
+    {
+        $this->kuotaModel->delete($id);
+        $res = [
+            'status'    => 'success',
+            'msg'     => 'Data berhasil dihapus.',
+        ];
+
+        return $this->respond($res, 200);
+    }
 }

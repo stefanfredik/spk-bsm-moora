@@ -5,53 +5,51 @@
                 <h5 class="modal-title" id="modalLabel"><?= $title; ?></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="<?= $meta['url']; ?>" method="" data-id="<?= $kriteria['id']; ?>" id="formEdit" onsubmit="update(event)">
+            <form action="<?= $meta['url']; ?>" method="" data-id="<?= $kuota['id']; ?>" id="formEdit" onsubmit="update(event)">
                 <div class="modal-body">
                     <div class="row mb-2">
                         <div class="col-md-4">
-                            <label class="form-label">Kriteria</label>
+                            <label class="form-label">Tahun</label>
                         </div>
                         <div class="col-md-8">
-                            <input value="<?= $kriteria['kriteria']; ?>" name="kriteria" type="text" class="form-control" required>
+                            <input name="tahun" value="<?= $kuota['tahun']; ?>" type="number" class="form-control" required>
                         </div>
                     </div>
 
+
+                    <div class="row mb-2">
+                        <div class="col-md-4">
+                            <label class="form-label">Periode</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input name="periode" type="text" value="<?= $kuota['periode']; ?>" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <div class="col-md-4">
+                            <label class="form-label">Jumlah Kuota</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input name="jumlah_kuota" value="<?= $kuota['jumlah_kuota']; ?>" type="text" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <div class="col-md-4">
+                            <label class="form-label">Tanggal Terima</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input name="tanggal_terima" value="<?= $kuota['tanggal_terima']; ?>" type="date" class="form-control" required>
+                        </div>
+                    </div>
 
                     <div class="row mb-2">
                         <div class="col-md-4">
                             <label class="form-label">Keterangan</label>
                         </div>
                         <div class="col-md-8">
-                            <input value="<?= $kriteria['keterangan']; ?>" name="keterangan" type="text" class="form-control" required>
-                            <div id="" class="invalid-feedback"></div>
-                        </div>
-                    </div>
-
-
-                    <div class="row mb-2">
-                        <div class="col-md-4">
-                            <label class="form-label">Bobot</label>
-                        </div>
-                        <div class="col-md-8">
-                            <input value="<?= $kriteria['nilai']; ?>" name="nilai" type="number" class="form-control" required>
-                            <div id="" class="invalid-feedback"></div>
-                        </div>
-                    </div>
-
-                    <div class="row mb-2">
-                        <div class="col-md-4">
-                            <label class="form-label">Cost/ Benefit</label>
-                        </div>
-                        <div class="col-md-8">
-                            <input value="cost" <?= ($kriteria['type'] == 'cost') ? 'checked' : ''; ?> class="form-check-input" type="radio" name="type" id="cost">
-                            <label class="form-check-label" for="cost">
-                                Cost
-                            </label>
-                            <input value="benefit" <?= ($kriteria['type'] == 'benefit') ? 'checked' : ''; ?> class="form-check-input" type="radio" name="type" id="benefit">
-                            <label class="form-check-label" for="benefit">
-                                Benefit
-                            </label>
-                            <div id="" class="invalid-feedback"></div>
+                            <textarea class="form-control" name="keterangan" id="" cols="30" rows="10"><?= $kuota['keterangan']; ?></textarea>
                         </div>
                     </div>
                 </div>
