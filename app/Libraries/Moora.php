@@ -30,7 +30,7 @@ class Moora
         $this->setPesertaKriteriaValue();
         $this->sumKriteriaValue();
         $this->insertToPeserta();
-        $this->sortPeserta();
+        // $this->sortPeserta();
         $this->countBenCost();
     }
 
