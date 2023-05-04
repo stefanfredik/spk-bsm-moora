@@ -1,25 +1,6 @@
 <?= $this->extend('/temp/index'); ?>
 <?= $this->section("content"); ?>
 
-<div class="row mb-2">
-    <div class="col-lg-12">
-        <div class="card border shadow">
-            <div class="card-header">
-                <h3>Kriteria Kelayakan</h3>
-            </div>
-            <div class="card-body">
-                <?php foreach ($kelayakan as $kl) : ?>
-                    <div class="row">
-                        <div class="col-md-4">
-                            >= <span class="fw-bold mx-2"><?= $kl['nilai']; ?></span><?= $kl['keterangan']; ?>
-                        </div>
-                    </div>
-                    <hr>
-                <?php endforeach; ?>
-            </div>
-        </div>
-    </div>
-</div>
 <div class="row">
     <div class="col">
         <div class="card  shadow">

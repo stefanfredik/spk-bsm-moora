@@ -111,28 +111,11 @@ $routes->group('datapeserta', static function ($router) {
 });
 
 
-// $routes->group("user", ['filter' => 'role:Admin'], function ($r) {
-//     $r->get("/", "User::getIndex");
-//     $r->get("tambah", "User::getTambah");
-//     $r->get("edit/(:num)", "User::getEdit/$1");
-//     $r->get("table", "User::getTable");
-
-//     $r->post("/", "User::postIndex");
-//     $r->post("saveedit/(:num)", "User::postSaveedit/$1");
-
-//     $r->put("edit/(:num)", "User::putEdit/$1");
-
-//     $r->delete("delete/(:num)", "User::deleteDelete/$1");
-// });
-
-
 $routes->group('user', static function ($router) {
     $router->get('/', 'User::index');
     $router->get('table', 'User::table');
     $router->get('tambah', 'User::tambah');
     $router->get('(:num)', 'User::edit/$1');
-    // $router->get('delete/(:num)', 'User::delete/$1');
-
     $router->post('/', 'User::store');
     $router->post("(:num)", "User::update/$1");
 
@@ -143,6 +126,20 @@ $routes->group('user', static function ($router) {
 $routes->group('profile', static function ($router) {
     $router->get("/", 'Profile::index');
     $router->get("password", 'Profile::gantipassword');
+});
+
+
+
+$routes->group('kuota', static function ($router) {
+    $router->get("/", 'Kuota::index');
+    $router->get('table', 'Kuota::table');
+    $router->get('tambah', 'Kuota::tambah');
+    $router->get('(:num)', 'Kuota::edit/$1');
+
+    $router->post('/', 'Kuota::store');
+    $router->post("(:num)", "Kuota::update/$1");
+
+    $router->delete("(:num)", "Kuota::delete/$1");
 });
 
 
