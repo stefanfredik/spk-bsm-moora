@@ -64,6 +64,7 @@
                     </div>
                 </div>
 
+
                 <hr>
                 <div class="row mb-1">
                     <div class="col-md-4">
@@ -74,34 +75,35 @@
                     </div>
                 </div>
 
-                <div class="row mb-1">
-                    <div class="col-md-4">
-                        <label class="form-label">Jumlah Tanggungan</label>
-                    </div>
-                    <div class="col-md-8">
-                        <p><?= $siswa['jumlah_tanggungan'] ?></p>
-                    </div>
-                </div>
 
 
                 <div class="row mb-1">
                     <div class="col-md-4">
-                        <label class="form-label">ALamat</label>
+                        <label class="form-label">Alamat</label>
                     </div>
                     <div class="col-md-8">
                         <p><?= $siswa['alamat'] ?></p>
                     </div>
                 </div>
 
+                <div class="row mb-1">
+                    <div class="col-md-4">
+                        <label class="form-label">Nama Rekening</label>
+                    </div>
+                    <div class="col-md-8">
+                        <p><?= $siswa['nama_rekening'] ?></p>
+                    </div>
+                </div>
 
                 <div class="row mb-1">
                     <div class="col-md-4">
-                        <label class="form-label">Telepon</label>
+                        <label class="form-label">No. Rekening</label>
                     </div>
                     <div class="col-md-8">
-                        <p><?= $siswa['telepon'] ?></p>
+                        <p><?= $siswa['no_rekening'] ?></p>
                     </div>
                 </div>
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kembali</button>

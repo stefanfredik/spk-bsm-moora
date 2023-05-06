@@ -13,6 +13,9 @@ class Peserta extends Migration {
             ],
             'id_siswa' => [
                 'type'  => 'INT',
+            ],
+            'tahun' => [
+                'type'  => 'INT',
             ]
         ];
 

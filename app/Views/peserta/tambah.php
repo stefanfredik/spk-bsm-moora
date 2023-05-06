@@ -9,6 +9,22 @@
                 <div class="modal-body">
                     <div class="row mb-2">
                         <div class="col-md-4">
+                            <label class="form-label">Tahun Bantuan</label>
+                        </div>
+
+
+                        <div class="col-md-8">
+                            <select class="form-control" name="tahun" id="" required>
+                                <option value="">Pilih Tahun</option>
+                                <?php for ($i = 2020; $i < 2030; $i++) : ?>
+                                    <option value="<?= $i; ?>"><?= $i; ?></option>
+                                <?php endfor; ?>
+                            </select>
+                        </div>
+                    </div>
+                    <hr class="">
+                    <div class="row mb-2">
+                        <div class="col-md-4">
                             <label class="form-label">Penduduk</label>
                         </div>
 
@@ -22,6 +38,7 @@
                             </select>
                         </div>
                     </div>
+                    <hr class="">
 
                     <?php foreach ($dataKriteria as $dt) : ?>
                         <div class="row mb-2">

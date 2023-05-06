@@ -5,8 +5,7 @@ namespace App\Models;
 use CodeIgniter\Model;
 use PhpParser\Node\Stmt\Return_;
 
-class KuotaModel extends Model
-{
+class KuotaModel extends Model {
     protected $DBGroup          = 'default';
     protected $table            = 'kuota';
     protected $primaryKey       = 'id';
@@ -18,8 +17,8 @@ class KuotaModel extends Model
     protected $allowedFields    = ['id', 'tahun', 'periode', 'jumlah_kuota', 'tanggal_terima', 'keterangan'];
 
 
-    public function findAll(int $limit = 0, int $offset = 0)
-    {
-        return $this->findAll()->sort();
-    }
+    // public function findAll(int $limit = 0, int $offset = 0)
+    // {
+    //     return $this->findAll()->sort();
+    // }
 }

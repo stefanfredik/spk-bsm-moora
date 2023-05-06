@@ -13,7 +13,7 @@ class PesertaModel extends Model {
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = false;
-    protected $allowedFields    = ['id', 'id_siswa'];
+    protected $allowedFields    = ['id', 'id_siswa', 'tahun'];
 
     public function findAllPeserta() {
         $this->select('siswa.*');
