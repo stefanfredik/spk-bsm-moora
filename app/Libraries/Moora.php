@@ -225,7 +225,7 @@ class Moora
 
     private function optimasi($nilai, $bobot): float
     {
-        return number_format($nilai * $bobot, 3);
+        return number_format($nilai * $bobot, 4);
         // return ($nilai * $bobot);
     }
 }
