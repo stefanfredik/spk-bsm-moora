@@ -4,8 +4,10 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Peserta extends Migration {
-    public function up() {
+class Peserta extends Migration
+{
+    public function up()
+    {
         $data = [
             'id' => [
                 'type'  => 'INT',
@@ -24,7 +26,8 @@ class Peserta extends Migration {
         $this->forge->createTable('peserta');
     }
 
-    public function down() {
+    public function down()
+    {
         $this->forge->dropTable('peserta');
     }
 }
