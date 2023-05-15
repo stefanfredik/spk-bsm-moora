@@ -15,15 +15,15 @@
     </a>
 
     <div class="sidenav-menu-heading">Data</div>
+
     <a class="nav-link <?= url_is('/datasiswa') ? 'active' : '' ?>" href="/datasiswa">
         <div class="nav-link-icon"><i data-feather="layers"></i></div>
         Data Siswa
     </a>
-    <hr class="hr">
-    <div class="sidenav-menu-heading">Pengelolahan</div>
-    <a class="nav-link <?= url_is('/perhitungan') ? 'active' : '' ?>" href="/perhitungan">
-        <div class="nav-link-icon"><i data-feather="percent"></i></div>
-        Data Perhitungan
+
+    <a class="nav-link <?= url_is('/datapeserta') ? 'active' : '' ?>" href="/datapeserta">
+        <div class="nav-link-icon"><i data-feather="file-text"></i></div>
+        Data Peserta
     </a>
 
     <a class="nav-link <?= url_is('/keputusan') ? 'active' : '' ?>" href="/keputusan">

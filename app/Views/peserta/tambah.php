@@ -12,7 +12,6 @@
                             <label class="form-label">Tahun Bantuan</label>
                         </div>
 
-
                         <div class="col-md-8">
                             <select class="form-control" name="tahun" id="" required>
                                 <option value="">Pilih Tahun</option>
@@ -27,7 +26,6 @@
                         <div class="col-md-4">
                             <label class="form-label">Penduduk</label>
                         </div>
-
 
                         <div class="col-md-8">
                             <select class="form-control" name="id_siswa" id="" required>
