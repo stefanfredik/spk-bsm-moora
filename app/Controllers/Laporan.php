@@ -28,6 +28,7 @@ class Laporan extends BaseController
     public function index()
     {
         $data = $this->data();
+        $data["meta"] = $this->meta;
         return view("laporan/index", $data);
     }
 

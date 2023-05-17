@@ -43,14 +43,14 @@ class Perhitungan extends BaseController
         $moora = new Moora($peserta, $kriteria, $subkriteria);
 
         $data = [
-            'title' => 'Data Perhitungan dan Table Moora',
             'dataKriteria' => $this->kriteriaModel->findAll(),
             'totalNilaiKriteria' => $this->totalNilaiKriteria,
             'peserta' => $moora->getAllPeserta(),
             'jumKriteriaBenefit' => $moora->jumKriteriaBenefit,
             'jumKriteriaCost' => $moora->jumKriteriaCost,
             'dataSubkriteria' => $this->subkriteriaModel->findAll(),
-            'bobotKriteria' => $moora->bobotKriteria
+            'bobotKriteria' => $moora->bobotKriteria,
+            'meta'  => $this->meta
         ];
 
         return view('/perhitungan/index', $data);

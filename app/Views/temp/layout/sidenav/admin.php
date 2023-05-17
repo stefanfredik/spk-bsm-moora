@@ -46,13 +46,13 @@
 
     <div class="sidenav-menu-heading">Pengelolahan</div>
     <a class="nav-link <?= url_is('/kuota') ? 'active' : '' ?>" href="/kuota">
-        <div class="nav-link-icon"><i data-feather="percent"></i></div>
+        <div class="nav-link-icon"><i class="text-gray bi bi-list-ol"></i></div>
         Data Kuota dan Periode
     </a>
 
 
     <a class="nav-link <?= url_is('/perhitungan') ? 'active' : '' ?>" href="/perhitungan">
-        <div class="nav-link-icon"><i data-feather="percent"></i></div>
+        <div class="nav-link-icon"><i class="text-gray bi bi-calculator"></i></div>
         Data Perhitungan
     </a>
 

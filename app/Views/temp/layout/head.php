@@ -4,11 +4,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title><?= @$title . " | " . APP_NAME; ?></title>
+    <title><?= @$meta['title'] . " | " . APP_NAME; ?></title>
     <link rel="icon" type="image/x-icon" href="<?= LOGO_IMG ?>" />
 
-    <?= $this->extend("temp/layout/sbstyles"); ?>
-
-
+    <?= $this->include("temp/layout/sbstyles"); ?>
     <?= $this->renderSection("styles"); ?>
 </head>
