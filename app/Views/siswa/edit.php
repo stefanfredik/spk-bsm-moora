@@ -80,14 +80,6 @@
                         </div>
                     </div>
 
-                    <div class="row mb-2">
-                        <div class="col-md-4">
-                            <label class="form-label">Jumlah Tanggungan</label>
-                        </div>
-                        <div class="col-md-8">
-                            <input value="<?= $siswa['jumlah_tanggungan'] ?>" name="jumlah_tanggungan" type="text" class="form-control" required>
-                        </div>
-                    </div>
 
                     <div class="row mb-2">
                         <div class="col-md-4">
@@ -98,15 +90,25 @@
                         </div>
                     </div>
 
+                    <div class="row mb-2">
+                        <div class="col-md-4">
+                            <label class="form-label">Nama Rekening</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input value="<?= $siswa['nama_rekening'] ?>" name="nama_rekening" type="text" class="form-control" required>
+                        </div>
+                    </div>
+
 
                     <div class="row mb-2">
                         <div class="col-md-4">
-                            <label class="form-label">Telepon</label>
+                            <label class="form-label">Nomor Rekening</label>
                         </div>
                         <div class="col-md-8">
-                            <input value="<?= $siswa['telepon'] ?>" name="telepon" type="text" class="form-control" required>
+                            <input value="<?= $siswa['no_rekening'] ?>" name="no_rekening" type="text" class="form-control" required>
                         </div>
                     </div>
+
 
                 </div>
                 <div class="modal-footer">
