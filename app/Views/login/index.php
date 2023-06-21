@@ -9,16 +9,12 @@
     <link rel="stylesheet" href="/home/fonts/icomoon/style.css">
     <link rel="stylesheet" href="/home/css/owl.carousel.min.css">
     <link rel="stylesheet" href="/home/css/bootstrap.min.css">
-
     <link rel="stylesheet" href="/home/css/style.css">
 
     <title>Halaman Login | <?= APP_SLUG; ?></title>
 </head>
 
 <body>
-
-
-
     <div class="content">
         <div class="container">
             <div class="row">
@@ -46,6 +42,7 @@
                                         <?= session('errors.login') ?>
                                     </div>
                                 </div>
+
                                 <div class="form-group last mb-4">
                                     <label for="password">Password</label>
                                     <input required name="password" type="password" class="form-control" id="password">
@@ -63,13 +60,10 @@
                                 </div> -->
 
                                 <input type="submit" value="Log In" class="btn btn-block btn-primary">
-
                             </form>
                         </div>
                     </div>
-
                 </div>
-
             </div>
         </div>
     </div>
